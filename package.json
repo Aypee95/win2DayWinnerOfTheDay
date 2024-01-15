@@ -4,6 +4,7 @@
   "description": "",
   "type": "module",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
@@ -16,5 +17,8 @@
     "mailtrap": "^3.2.0",
     "nodemailer": "^6.9.8",
     "puppeteer": "^21.7.0"
+  },
+  "devDependencies": {
+    "nexe": "^4.0.0-rc.4"
   }
 }
