@@ -1,6 +1,7 @@
-$action = New-ScheduledTaskAction -Execute "cmd.exe" -Argument "/c win2dayWinnerOfTheDay.exe" -WorkingDirectory $pwd.path
+#Requires -RunAsAdministrator
+$action = New-ScheduledTaskAction -Execute "node" -Argument "index.js" -WorkingDirectory $pwd.path
 $dailyTrigger = New-ScheduledTaskTrigger -Daily -At 4pm
-$startupTrigger = New-ScheduledTaskTrigger -AtLogOn -User $env:UserName
+$startupTrigger = New-ScheduledTaskTrigger -AtStartup
 $taskName = $pwd.path.split('\')[-1]
 $description = "Simple web scraping app with pupeteer to check if you won the checkpot on win2day.at "
 
