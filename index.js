@@ -46,8 +46,9 @@ function sendMail(body) {
   const emailBody = `The winner of the day is: ${winnerOfTheDay}\nhttps://www.win2day.at/gewinner-des-tages`;
 
   console.log(emailBody);
+  let maskedName = process.env.TARGET_WINNER_USERNAME.slice(0,3)+"*****";
 
-  if (winnerOfTheDay === process.env.TARGET_WINNER_USERNAME) {
+  if (winnerOfTheDay === process.env.TARGET_WINNER_USERNAME || winnerOfTheDay === maskedName) {
     sendMail(emailBody);
   }
 })();
